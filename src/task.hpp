@@ -10,7 +10,7 @@ class Task {
     std::string category;
     Priority priority;
     std::string deadline;
-    boot completed;
+    bool completed;
 
     Task(std::string n, std::string c, Priority p, std::string d);
     void markCompleted();
