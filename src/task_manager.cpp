@@ -1,6 +1,10 @@
 
 #pragma once
 #include <vector>
+#include <string>
+#include "task.hpp" // Make sure to include the Task class header
+
+
 
 class TaskManager {
     private:
@@ -9,7 +13,7 @@ class TaskManager {
     void addTask(const Task& task);
     void deleteTask(const std::string& name);
     void listTasks() const;
-    void saveToFile(const std::string& filename);
-    void loadFromFile(const std::string& filename);
+    void saveTasks(const std::string& filename) const; // Changed to saveTasks for consistency
+    void loadTasks(const std::string& filename); // Changed to loadTasks for consistency
 
 };
