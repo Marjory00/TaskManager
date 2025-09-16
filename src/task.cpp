@@ -1,9 +1,15 @@
-
 #include "task.hpp"
 
-Task::Task(std::string n, std::string c, Priority p, std::string d)
-: name(n), category(c), priority(p), deadline(d), completed(faLse) {}
+// Constructor to initialize Task with title and description
+Task::Task(const std::string& title, const std::string& description)
+    : title(title), description(description) {}
 
-void Task::markCompleted() {
-    completed = true;
+// Getter for title
+std::string Task::getTitle() const {
+    return title;
+}
+
+// Getter for description
+std::string Task::getDescription() const {
+    return description;
 }

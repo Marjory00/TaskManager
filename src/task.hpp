@@ -1,19 +1,22 @@
+#ifndef TASK_HPP
+#define TASK_HPP
 
-#pragma once
 #include <string>
 
-enum class Priority { Low, Medium, High };
-
 class Task {
-    public:
-    std::string name;
-    std::string category;
-    Priority priority;
-    std::string deadline;
-    bool completed;
+public:
+    // Constructor
+    Task(const std::string& title, const std::string& description);
 
-    Task(std::string n, std::string c, Priority p, std::string d);
-    void markCompleted();
+    // Getter for title
+    std::string getTitle() const;
+
+    // Getter for description
+    std::string getDescription() const;
+
+private:
+    std::string title;       // Title of the task
+    std::string description; // Description of the task
 };
 
-
+#endif // TASK_HPP
