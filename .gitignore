@@ -1,0 +1,33 @@
+# Ignore compiled binaries
+*.exe
+*.out
+
+# Ignore data files
+/data/tasks.json
+
+# Ignore sensitive modules
+/src/encryption.cpp
+/src/encryption.hpp
+
+
+# Ignore build directories
+/build/
+bin/
+*.o
+*.exe
+
+
+node_modules/
+dist/
+.env
+.DS_Store
+
+
+# Ignore IDE specific files
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore system files
+.DS_Store
+Thumbs.db
