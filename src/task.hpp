@@ -3,12 +3,23 @@
 
 #include <string>
 
+// Enum for task priority
+enum class Priority {
+    Low,
+    Medium,
+    High
+};
+
 struct Task {
     std::string title;
     std::string description;
-    std::string priority; // Low, Medium, High
+    Priority priority; // Use enum for priority
     std::string deadline; // YYYY-MM-DD
     std::string category; // Task category
+
+    // Constructor
+    Task(const std::string& t, const std::string& d, Priority p, const std::string& dl, const std::string& c)
+        : title(t), description(d), priority(p), deadline(dl), category(c) {}
 };
 
 #endif // TASK_HPP
