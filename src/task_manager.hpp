@@ -1,26 +1,35 @@
-#pragma once
+#ifndef TASK_MANAGER_HPP
+#define TASK_MANAGER_HPP
 
+#include <iostream>
 #include <vector>
+#include <fstream>
 #include <string>
-#include "task.hpp" // Include the Task class header
+#include <algorithm>
+#include <nlohmann/json.hpp> // Include the JSON library
+
+using json = nlohmann::json;
+
+struct Task {
+    std::string title;
+    std::string description;
+    std::string priority; // Low, Medium, High
+    std::string deadline; // YYYY-MM-DD
+    std::string category; // Task category
+};
 
 class TaskManager {
-    private:
-    std::vector<Task> tasks; // Vector to hold tasks
-    
+private:
+    std::vector<Task> tasks;
+
 public:
-    // Method to add a task
-    void addTask(const Task& task);
-
-    // Method to delete a task by title
-    void deleteTask(const std::string& name);
-
-    // Method to list all tasks
-    void listTasks() const;
-
-    // Method to save tasks to a file
-    void saveTasks(const std::string& filename) const;
-
-    // Method to load tasks from a file
     void loadTasks(const std::string& filename);
+    void saveTasks(const std::string& filename);
+    void addTask(const Task& task);
+    void editTask(const std::string& title);
+    void deleteTask(const std::string& title);
+    void displayTasks() const;
+    std::vector<Task>& getTasks(); // Accessor for tasks
 };
+
+#endif // TASK_MANAGER_HPP

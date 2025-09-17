@@ -3,20 +3,12 @@
 
 #include <string>
 
-class Task {
-public:
-    // Constructor
-    Task(const std::string& title, const std::string& description);
-
-    // Getter for title
-    std::string getTitle() const;
-
-    // Getter for description
-    std::string getDescription() const;
-
-private:
-    std::string title;       // Title of the task
-    std::string description; // Description of the task
+struct Task {
+    std::string title;
+    std::string description;
+    std::string priority; // Low, Medium, High
+    std::string deadline; // YYYY-MM-DD
+    std::string category; // Task category
 };
 
 #endif // TASK_HPP

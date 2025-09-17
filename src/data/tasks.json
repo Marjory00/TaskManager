@@ -1,15 +1,30 @@
-
 [
     {
-        "title": "Buy groceries",
-        "description": "Milk, Bread, Eggs, and Butter"
-    },
-    {
         "title": "Finish project report",
-        "description": "Complete the final report for the project by Friday"
+        "description": "Complete the final report for the project.",
+        "priority": "High",
+        "deadline": "2023-09-30",
+        "category": "Work"
     },
     {
-        "title": "Schedule dentist appointment",
-        "description": "Call to schedule an appointment for next week"
+        "title": "Grocery shopping",
+        "description": "Buy groceries for the week.",
+        "priority": "Medium",
+        "deadline": "2023-09-20",
+        "category": "Personal"
+    },
+    {
+        "title": "Exercise",
+        "description": "Go to the gym for a workout.",
+        "priority": "Low",
+        "deadline": "2023-09-25",
+        "category": "Health"
+    },
+    {
+        "title": "Read a book",
+        "description": "Finish reading 'The Great Gatsby'.",
+        "priority": "Medium",
+        "deadline": "2023-10-05",
+        "category": "Leisure"
     }
 ]

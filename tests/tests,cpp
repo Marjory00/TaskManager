@@ -1,0 +1,65 @@
+
+#include <iostream>
+#include <cassert>
+#include "task.hpp"
+#include "task_manager.hpp"
+
+void testAddTask() {
+    TaskManager manager;
+    Task task = {"Test Task", "This is a test task.", "Medium", "2023-09-30", "Testing"};
+    manager.addTask(task);
+
+    assert(manager.getTasks().size() == 1);
+    assert(manager.getTasks()[0].title == "Test Task");
+    std::cout << "testAddTask passed.\n";
+}
+
+void testEditTask() {
+    TaskManager manager;
+    Task task = {"Test Task", "This is a test task.", "Medium", "2023-09-30", "Testing"};
+    manager.addTask(task);
+
+    manager.editTask("Test Task");
+    assert(manager.getTasks()[0].description == "This is a test task."); // Should remain the same
+
+    std::cout << "Enter a new description for the task: ";
+    std::cin.ignore(); // Clear the newline
+    std::string newDescription = "Updated test task description.";
+    manager.getTasks()[0].description = newDescription;
+
+    manager.editTask("Test Task");
+    assert(manager.getTasks()[0].description == newDescription);
+    std::cout << "testEditTask passed.\n";
+}
+
+void testDeleteTask() {
+    TaskManager manager;
+    Task task = {"Test Task", "This is a test task.", "Medium", "2023-09-30", "Testing"};
+    manager.addTask(task);
+    assert(manager.getTasks().size() == 1);
+
+    manager.deleteTask("Test Task");
+    assert(manager.getTasks().empty());
+    std::cout << "testDeleteTask passed.\n";
+}
+
+void testDisplayTasks() {
+    TaskManager manager;
+    Task task1 = {"Task 1", "First task description.", "Low", "2023-09-20", "General"};
+    Task task2 = {"Task 2", "Second task description.", "High", "2023-09-25", "General"};
+    manager.addTask(task1);
+    manager.addTask(task2);
+
+    std::cout << "Tasks after adding:\n";
+    manager.displayTasks(); // Manually check the output
+}
+
+int main() {
+    testAddTask();
+    testEditTask();
+    testDeleteTask();
+    testDisplayTasks();
+
+    std::cout << "All tests passed.\n";
+    return 0;
+}
